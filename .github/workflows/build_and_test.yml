@@ -1,0 +1,20 @@
+name: Build and test
+
+on: [push]
+paths:
+  - algorythm/*
+  - algorythm.hpp
+  - cmake/*
+  - CMakeLists.txt
+  - test/*
+  - .github/workflows/build_and_test.yml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      # `git submodule update --init --recursive` doesn't work.
+      - name: Clone submodules as standard repositories
+        run: git clone https://github.com/MuAlphaOmegaEpsilon/cmake
+      - name: Build and test
+        run: ctest --build-and-test . build --parallel --build-generator "Unix Makefiles" --test-command ctest
