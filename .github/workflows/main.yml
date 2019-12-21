@@ -1,0 +1,20 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run CMake
+      run: |
+        mkdir -p build
+        cd build
+        cmake ..
+    - name: Run a multi-line script
+      run: |
+        pwd
+        la -a
