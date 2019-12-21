@@ -1,8 +1,8 @@
 IF ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
     CMAKE_MINIMUM_REQUIRED (VERSION 3.12.4)
 	SET (BUILD_TESTING ON CACHE BOOL "Enable tests builds.")
-    INCLUDE (cmake/cxx_strict_compile_options.cmake)
-    INCLUDE (cmake/buildtype_default_release.cmake)
+	INCLUDE ("${CMAKE_SOURCE_DIR}"/cmake/cxx_strict_compile_options.cmake)
+	INCLUDE ("${CMAKE_SOURCE_DIR}"/cmake/buildtype_default_release.cmake)
 ENDIF ()
 
 PROJECT (
@@ -11,7 +11,7 @@ PROJECT (
     DESCRIPTION "A C++17 algorithmic library.")
 
 ADD_LIBRARY (algorythm INTERFACE)
-TARGET_INCLUDE_DIRECTORIES (algorythm INTERFACE .) 
+TARGET_INCLUDE_DIRECTORIES (algorythm INTERFACE "${CMAKE_SOURCE_DIR}") 
 TARGET_COMPILE_FEATURES (
     algorythm
     INTERFACE
@@ -29,6 +29,6 @@ SET_PROPERTY (TARGET algorythm PROPERTY INTERFACE_CMAKE_CXX_EXTENSIONS OFF)
 
 IF (BUILD_TESTING)
     INCLUDE (CTest)
-    ADD_SUBDIRECTORY (test)
+	ADD_SUBDIRECTORY ("${CMAKE_SOURCE_DIR}" test)
 ENDIF ()
 
