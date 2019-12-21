@@ -1,5 +1,5 @@
 IF ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
-    CMAKE_MINIMUM_REQUIRED (VERSION 3.13.4)
+    CMAKE_MINIMUM_REQUIRED (VERSION 3.12.4)
 	SET (BUILD_TESTING ON CACHE BOOL "Enable tests builds.")
     INCLUDE (cmake/cxx_strict_compile_options.cmake)
     INCLUDE (cmake/buildtype_default_release.cmake)
