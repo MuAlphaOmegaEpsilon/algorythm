@@ -16,3 +16,8 @@
 !cmake/*
 !test
 !test/*
+
+# Dotfolders
+!.github
+!.github/workflows
+!.github/workflows/*
