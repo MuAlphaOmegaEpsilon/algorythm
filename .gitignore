@@ -1,32 +1,18 @@
-# Prerequisites
-*.d
+*
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Files
+!algorythm.hpp
+!CMakeLists.txt
+!LICENSE
+!README.md
 
-# Precompiled Headers
-*.gch
-*.pch
+# Dotfiles
+!.gitignore
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# Folders
+!algorythm
+!algorythm/*
+!cmake
+!cmake/*
+!test
+!test/*
