@@ -1,0 +1,5 @@
+#ifndef ALGORYTHM_HPP
+#define ALGORYTHM_HPP
+
+#endif // ALGORYTHM_HPP
+
