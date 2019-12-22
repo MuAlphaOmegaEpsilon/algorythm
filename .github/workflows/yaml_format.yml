@@ -1,7 +1,8 @@
 name: Build and test
 
-on: [push]
-paths: .github/workflows/*
+on:
+  push:
+    paths: .github/workflows/*
 jobs:
   prettier:
     runs-on: ubuntu-latest

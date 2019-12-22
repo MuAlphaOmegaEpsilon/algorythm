@@ -1,10 +1,11 @@
 name: Build and test
 
-on: [push]
-paths:
-  - CMakeLists.txt
-  - test/CMakeLists.txt
-  - .github/workflows/cmake_format.yml
+on:
+  push:
+    paths:
+      - CMakeLists.txt
+      - test/CMakeLists.txt
+      - .github/workflows/cmake_format.yml
 jobs:
   cmake-format:
     runs-on: ubuntu-latest

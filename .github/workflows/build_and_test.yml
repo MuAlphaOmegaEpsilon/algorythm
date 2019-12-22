@@ -1,13 +1,14 @@
 name: Build and test
 
-on: [push]
-paths:
-  - algorythm/*
-  - algorythm.hpp
-  - cmake/*
-  - CMakeLists.txt
-  - test/*
-  - .github/workflows/build_and_test.yml
+on:
+  push:
+    paths:
+      - algorythm/*
+      - algorythm.hpp
+      - cmake/*
+      - CMakeLists.txt
+      - test/*
+      - .github/workflows/build_and_test.yml
 jobs:
   build:
     runs-on: ubuntu-latest
