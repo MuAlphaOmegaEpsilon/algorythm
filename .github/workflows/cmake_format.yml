@@ -1,4 +1,4 @@
-name: [cmake-format] Check CMake files format
+name: CMakeFormat - Check CMake files format and correctness
 
 on:
   push:

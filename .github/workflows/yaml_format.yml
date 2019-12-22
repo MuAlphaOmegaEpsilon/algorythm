@@ -1,4 +1,4 @@
-name: [Prettier] Check yaml files format 
+name: Prettier - Check yaml files format 
 
 on:
   push:
