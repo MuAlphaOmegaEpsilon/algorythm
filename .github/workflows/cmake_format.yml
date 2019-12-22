@@ -20,6 +20,6 @@ jobs:
       - name: Install cmake-format
         run: pip3 install cmake-format
       - name: Run cmake-format
-        run: cmake-format --check CMakeLists.txt test/CMakeLists.txt --config-files cmake/format || echo "Please format your CMake files."
+        run: cmake-format --check CMakeLists.txt test/CMakeLists.txt --config-files cmake/format
       - name: Run cmake-lint
-        run: cmake-lint CMakeLists.txt test/CMakeLists.txt --config-files cmake/format || echo "Please fix your CMake files."
+        run: cmake-lint CMakeLists.txt test/CMakeLists.txt --config-files cmake/format
