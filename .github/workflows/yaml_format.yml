@@ -16,4 +16,4 @@ jobs:
       - name: Install prettier
         run: sudo npm install --global prettier
       - name: Run prettier
-        run: prettier .github/workflows/*.yml --list-different
+        run: prettier .github/workflows/*.yml --check
