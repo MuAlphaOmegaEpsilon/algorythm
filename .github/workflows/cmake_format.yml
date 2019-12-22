@@ -1,0 +1,24 @@
+name: Build and test
+
+on: [push]
+paths:
+  - CMakeLists.txt
+  - test/CMakeLists.txt
+  - .github/workflows/cmake_format.yml
+jobs:
+  cmake-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@master
+        with:
+          python-version: '3.x'
+      # `git submodule update --init --recursive` doesn't work.
+      - name: Clone submodules as standard repositories
+        run: git clone https://github.com/MuAlphaOmegaEpsilon/cmake
+      - name: Install cmake-format
+        run: pip3 install cmake-format
+      - name: Run cmake-format
+        run: cmake-format --check CMakeLists.txt test/CMakeLists.txt --config-files cmake/format || echo "Please format your CMake files."
+      - name: Run cmake-lint
+        run: cmake-lint CMakeLists.txt test/CMakeLists.txt --config-files cmake/format || echo "Please fix your CMake files."
