@@ -4,8 +4,8 @@ IF ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
         BUILD_TESTING
         ON
         CACHE BOOL "Enable tests builds.")
-    INCLUDE ("${CMAKE_SOURCE_DIR}/cmake/cxx_strict_compile_options.cmake")
-    INCLUDE ("${CMAKE_SOURCE_DIR}/cmake/buildtype_default_release.cmake")
+    INCLUDE (cmake/cxx_strict_compile_options.cmake)
+    INCLUDE (cmake/buildtype_default_release.cmake)
 ENDIF ()
 
 PROJECT (
@@ -15,7 +15,7 @@ PROJECT (
 
 ADD_LIBRARY (algorythm INTERFACE)
 SET_PROPERTY (TARGET algorythm PROPERTY INTERFACE_CMAKE_CXX_EXTENSIONS OFF)
-TARGET_INCLUDE_DIRECTORIES (algorythm INTERFACE "${CMAKE_SOURCE_DIR}")
+TARGET_INCLUDE_DIRECTORIES (algorythm INTERFACE .)
 TARGET_COMPILE_FEATURES (
     algorythm
     INTERFACE
@@ -32,5 +32,5 @@ TARGET_COMPILE_FEATURES (
 
 IF (BUILD_TESTING)
     INCLUDE (CTest)
-    ADD_SUBDIRECTORY ("${CMAKE_SOURCE_DIR}/test")
+    ADD_SUBDIRECTORY (test)
 ENDIF ()
