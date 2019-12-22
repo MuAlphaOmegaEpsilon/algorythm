@@ -1,4 +1,4 @@
-name: Build and test
+name: [Prettier] Check yaml files format 
 
 on:
   push:
@@ -12,6 +12,6 @@ jobs:
         with:
           node-version: '10.x'
       - name: Install prettier
-        run: cd .github/workflows/ && npm install prettier
+        run: npm install prettier
       - name: Run prettier
-        run: prettier *.yml --list-different
+        run: prettier .github/workflows/*.yml --list-different

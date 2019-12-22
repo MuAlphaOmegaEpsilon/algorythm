@@ -1,4 +1,4 @@
-name: Build and test
+name: [cmake-format] Check CMake files format
 
 on:
   push:

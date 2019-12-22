@@ -1,4 +1,4 @@
-name: Build and test
+name: [CMake+CTest] Build and test
 
 on:
   push:
